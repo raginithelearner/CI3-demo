@@ -1,17 +1,3 @@
-.carousel-inner {    
-    width: 100%;
-    border: 1px solid green;
-    margin: 0 auto;
-    margin-top: 40px;
-    height: 430px;
-}
-
-.furniture_text{
-    font-size: 80px;
-}/*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
-
-/*--------------------------------------------------------------------- import Fonts ---------------------------------------------------------------------*/
-
 @import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 @font-face {
@@ -43,8 +29,6 @@ src: url("../fonts/BalooChettan-Regular.ttf");
 * {
      box-sizing: border-box !important;
      transition: ease all 0.5s;
-     -webkit-user-select: none;
-     user-select: none;
 }
 
 html {
@@ -66,10 +50,14 @@ body {
 body {
      color: #666666;
      font-size: 14px;
-     font-family:Poppins;
+     font-family: Poppins;
      line-height: 1.80857;
      font-weight: normal;
      overflow-x: hidden;
+}
+
+.navbar-nav{
+cursor: pointer;
 }
 
 a {
@@ -238,7 +226,7 @@ button {
 }
 
 .layout_padding {
-     padding-top: 90px;
+     padding-top: 0;
      padding-bottom: 0;
 }
 
@@ -330,10 +318,26 @@ button {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.banner_section > #furniture-small{
+    padding: 10px;
+    display: none;
+}
+
+.banner_section > #furniture-large{
+    width: 800px;
+    padding: 10px;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .icon_1{
     width: 100%;
-    float: left;
     text-align: center;
+    margin-bottom: 10px;
 }
 .furniture_text{
     font-size: 100px;
@@ -400,6 +404,7 @@ button {
     position: absolute;
     right: -150px;
     top: 57%;
+
 }
 #costum_slider .carousel-control-prev, #costum_slider .carousel-control-next {
     width: 85px;
@@ -417,12 +422,15 @@ button {
 
 .services_section{
     width: 100%;
+    height: calc(100vh - 65px);
     float: left;
-    padding-bottom: 90px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    display: grid;
+    place-items: center;
 }
 .services_taital{
     width: 100%;
-    float: left;
     font-size: 36px;
     color: #090808;
     text-align: center;
@@ -430,20 +438,18 @@ button {
 }
 .many_taital{
     width: 100%;
-    float: left;
     font-size: 16px;
     color: #090808;
     text-align: center;
     margin-left: 0;
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 .services_section2{
     width: 100%;
-    float: left;
 }
 .furnitures_text {
     width: 100%;
-    float: left;
     font-size: 24px;
     color: #090808;
     text-transform: uppercase;
@@ -452,7 +458,6 @@ button {
 }
 .dummy_text{
     width: 100%;
-    float: left;
     font-size: 16px;
     color: #090808;
     text-align: center;
@@ -467,65 +472,84 @@ button {
 }
 .read_bt {
     width: 100%;
-    float: left;
-    margin-top: 10px;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 .read_bt a{
     width: 100%;
-    float: left;
     font-size: 18px;
-    color: #ffffff;
+    color: #ffffff !important;
     background-color: #ffb607;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
     border-radius: 5px;
     text-transform: uppercase;
 }
 .read_bt a:hover{
-    color: #ffffff;
+    color: #ffffff !important;
     background-color: #000;
 }
 .about_section{
-    width: 100%;
-    float: left;
-    background-color: #ffb607;
-    height: auto;
-    padding-bottom: 90px;
+    box-sizing: border-box;
+    max-width: 1110px;
+    margin: 0 auto;
+    height: calc(100vh - 65px);
+    /* height: 100%; */
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+
+    /* border: 2px solid red; */
+    flex-direction: column;
+    justify-content: space-between;
 }
-.image_1{
-    width: 100%;
-    float: left; 
+#text-image-container {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.text-image-cont-img{
+    background-image: url(../images/chair3.jpg);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    display: block;
+    width: 400px;
+    height: 100%;
 }
 
 .about_text {
     width: 100%;
-    float: left;
     font-size: 40px;
-    color: #ffffff;
+    color: #000;
     text-transform: uppercase;
     font-weight: 500;
+    padding: 0;
 }
 .lorem_text {
     width: 100%;
-    float: left;
     font-size: 16px;
-    color: #ffffff;
+    color: #000;
     margin-left: 0;
-    padding-top: 40px;
+    /* border: 2px solid red; */
+    /* display: inline-block; */
+    /* padding-top: 40px; */
 }
-.read_bt1 {
-    width: 30%;
-    float: left;
-    margin-top: 70px;
+.read_bt1{
+    display: inline-block;
 }
 .read_bt1 a{
     width: 100%;
-    float: left;
     font-size: 18px;
     color: #ffffff;
     background-color: #070201;
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
     border-radius: 5px;
     text-transform: uppercase;
 }
@@ -536,7 +560,8 @@ button {
 .furnitures_section {
     width: 100%;
     float: left;
-    padding-bottom: 90px;
+    padding-top: 40px;
+    padding-bottom: 50px;
 }
 .our_text{
     width: 100%;
@@ -578,18 +603,17 @@ a:hover {
 
 .overlay {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60%;
-    width: 42%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 50px;
     opacity: 0;
     transition: .3s ease;
     background-color: #fabc26;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.2);
     margin: 0 auto;
     border-radius: 100px;
-    top: 55px;
 }
 
 .container_main:hover .overlay {
@@ -598,7 +622,7 @@ a:hover {
 
 .icon {
   color: white;
-  font-size: 100px;
+  font-size: 25px !important;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -865,20 +889,26 @@ a:hover {
 }
 .contact_section {
     width: 100%;
-    float: left;
     background-image: url(../images/contact-bg.png);
-    height: auto;
-    background-size: 100%;
+    height: calc(100vh - 65px);
+    background-size: cover;
     background-repeat: no-repeat;
-    padding-bottom: 90px;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    display: grid;
+    place-items: center;
+
+}
+
+.wrapper {
+    text-align: center;
+    max-width: 500px;
 }
 .mail_sectin{
     width: 100%;
-    float: left;
 }
 .contact_text{
     width: 100%;
-    float: left;
     font-size: 36px;
     color: #ffffff;
 
@@ -910,27 +940,25 @@ textarea#comment::placeholder {
     color: #989696;
 }
 .send_bt {
-    width: 100%;
-    float: left;
-    margin-top: 50px;
+    min-width: 100px !important;
+    margin-top: 40px;
+
 }
 .send_bt a{
-    width: 30%;
-    float: left;
     font-size: 20px;
-    color: #989696;
+    color: #000000;
     text-align: center;
     border: 2px solid #ffffff;
-    padding: 10px 0;
+    padding: 10px 20px;
     font-weight: bold;
+
 }
 .send_bt a:hover{
-    color: #989696;
+    color: #000000;
     background-color: #ffffff;
 }
 .image_9 {
     width: 100%;
-    float: left;
     padding-top: 83px;
 }
 .input-group {
@@ -983,7 +1011,8 @@ textarea#comment::placeholder {
     float: left;
     background-color: #313131;
     height: auto;
-    padding-bottom: 90px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .fooer_logo {
     width: 100%;
@@ -1053,35 +1082,37 @@ textarea#comment::placeholder {
 
 .carousel-inner {    
     width: 75%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: 0 auto;
     margin-top: 40px;
     height: 375px;
 }
 
-@media screen and (min-width: 575px) {
+@media screen and (max-width: 575px) {
     .carousel-inner {    
         width: 100%;
-        border: 1px solid green;
+        /* border: 1px solid green; */
         margin: 0 auto;
         margin-top: 40px;
-        height: 430px;
+        height: 350px !important;
     }
 
     .furniture_text{
         font-size: 80px;
     }
-
-    .banner_section {
-        width: 100%;
-        background-image: url(../images/banner-bg.webp);
-        height: 500px;
-        padding-bottom: 70px;
-        background-size: cover;
-        background-repeat: no-repeat;
+    .wrapper {
+        width: 90%;
     }
 
-
+    .there_text {
+        font-size: 20px !important;
+    }
+    .banner_section > #furniture-large{
+        display: none;
+    }
+    .banner_section > #furniture-small{
+        display: block;
+    }
 
 
 }
@@ -1116,22 +1147,13 @@ textarea#comment::placeholder {
     border-radius: 100px;
 }
 
-/* @media screen and (max-width: 770px) {
-    .carousel-control-prev, .carousel-control-next {
-        width: 50px;
-        height: 50px;
-    }
-    
-} */
-
-
 
 
 
 @media screen and (max-width: 768px) {
     .carousel-inner {    
         width: 75%;
-        border: 1px solid green;
+        /* border: 1px solid green; */
         margin: 0 auto;
         margin-top: 40px;
         height: 430px;
@@ -1143,31 +1165,64 @@ textarea#comment::placeholder {
 }
 
 
+
+@media screen and (max-width: 1040px) {
+    #text-image-container {
+        flex-direction: column;
+    }
+    .about_section{
+        height: max-content;
+    }
+
+    .text-image-cont-img{
+        background-position: center center;
+        width: 100%;
+        height: 400px;
+        background-image: url(../images/chair2.webp);
+        border-radius: 10px;
+    }
+
+    .lorem_text {
+        width: 100%;
+        font-size: 16px;
+        color: #000;
+        margin: 0;
+    }
+    .read_bt1{
+        margin-top: 20px;
+    }
     
-/* @media screen and (max-width: 700px) {
-    .carousel-inner {
-        width: 75%;
-        margin: 0 auto
-    }
- 
-    .contact_bt a, .furniture_text{
-        transform: scale(.9);
-    }
-
-    .there_text{
-        margin-top: -10px;
-        font-size: 20px;
-    }
-} */
-
-.banner_section > img{
-    width: 800px;
+    /* 
+    .text-image-cont-img{
+    background-image: url(../images/chair3.jpg);
+    background-position: center center;
+    background-size: cover;
+    border-radius: 20px;
+    flex-shrink: 0;
+    flex-grow: 0;
     display: block;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 400px;
+    height: 100%;
 }
+.about_text {
+        width: 100%;
+        font-size: 40px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 500;
+        padding: 0;
+    }
+    .lorem_text {
+        width: 100%;
+        font-size: 16px;
+        color: #000;
+        margin-left: 0;
+    }
+    .read_bt1{
+        display: inline-block;
+    } */
+}
+
 
 @media screen and (max-width: 1000px) {
     .banner_section > img{
@@ -1176,7 +1231,7 @@ textarea#comment::placeholder {
 
     .carousel-inner {    
         width: 100%;
-        border: 1px solid green;
+        /* border: 1px solid green; */
         margin: 0 auto;
         margin-top: 40px;
         height: 430px;
@@ -1184,5 +1239,15 @@ textarea#comment::placeholder {
 
     .furniture_text{
         font-size: 80px;
+    }
+}
+
+@media screen and (max-width: 995px) {
+    .services_section{
+        height: 100%;
+    }
+
+    .services_section2 .row > * {
+        margin: 20px 0;
     }
 }
