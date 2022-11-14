@@ -90,7 +90,7 @@ else{
 
 
 
-         const anchors = document.querySelectorAll('nav .nav-item a, #login');
+         const anchors = document.querySelectorAll('nav .nav-item a');
          let section = document.querySelector('section');
          
          anchors.forEach((a) => {
@@ -100,17 +100,16 @@ else{
 
          anchors.forEach((a) => {
             a.addEventListener('click', () => {
-               // console.clear();
                anchors.forEach((a) => {
                   a.classList.remove('active');
                })
-               document.querySelector('#'+a.id).classList.add('active');
+               document.querySelector('#' + a.id).classList.add('active');
                fetch('<?=base_url()?>get/' + a.id)
                .then((resp) => resp.text())
                .then((result) => {
                   section.innerHTML = result;
                   if(a.id == 'home'){
-                     history.pushState('null', null, '<?=base_url()?>')
+                     history.pushState(null, null, '<?=base_url()?>')
                   }
                   else{
                      history.pushState(null, null, '<?=base_url()?>' + a.id)
@@ -119,8 +118,7 @@ else{
             })
          })
 
-         window.onpopstate = function() {
-         }
+
       </script>
 
       <!-- footer section start -->
