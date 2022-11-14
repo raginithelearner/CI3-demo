@@ -1,6 +1,13 @@
 <?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
-$section_data = $this->main_model->get_pages($section_page)[0]['text'];
+if($this->main_model->get_pages($section_page)){
+   $section_data = $this->main_model->get_pages($section_page)[0]['text'];
+}
+else{
+   $this->load->view('./errors/html/error_404.php');
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -78,8 +85,11 @@ $section_data = $this->main_model->get_pages($section_page)[0]['text'];
 
 
       <script>
-         
-         
+
+
+
+
+
          const anchors = document.querySelectorAll('nav .nav-item a, #login');
          let section = document.querySelector('section');
          
@@ -90,27 +100,27 @@ $section_data = $this->main_model->get_pages($section_page)[0]['text'];
 
          anchors.forEach((a) => {
             a.addEventListener('click', () => {
+               // console.clear();
                anchors.forEach((a) => {
-               a.classList.remove('active');
-            })
-            document.querySelector('#'+a.id).classList.add('active');
-         
-               // $this->main_model->get_pages($section_page)[0]['text']
-               let fetch_data = '<?=base_url()?>get/' + a.id;
-               console.log(fetch_data);
-               fetch(fetch_data)
-               .then((res) => res.text())
+                  a.classList.remove('active');
+               })
+               document.querySelector('#'+a.id).classList.add('active');
+               fetch('<?=base_url()?>get/' + a.id)
+               .then((resp) => resp.text())
                .then((result) => {
                   section.innerHTML = result;
                   if(a.id == 'home'){
-                     history.pushState('', 'Built Better', '<?=base_url()?>')
+                     history.pushState('null', null, '<?=base_url()?>')
                   }
                   else{
-                     history.pushState('', 'Built Better', '<?=base_url()?>' + a.id)
+                     history.pushState(null, null, '<?=base_url()?>' + a.id)
                   }
                })
             })
          })
+
+         window.onpopstate = function() {
+         }
       </script>
 
       <!-- footer section start -->
