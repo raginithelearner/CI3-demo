@@ -23,7 +23,7 @@ $(function () {
 	/* Tooltip
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	
-	$(document).ready(function(){
+	window.addEventListener('DOMContentLoaded', function(){
 		$('[data-toggle="tooltip"]').tooltip();
 	});
 	
@@ -65,7 +65,7 @@ $(function () {
 	/* OwlCarousel - Blog Post slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	
-	$(document).ready(function() {
+	window.addEventListener('DOMContentLoaded', function() {
 	  var owl = $('.carousel-slider-post');
 	  owl.owlCarousel({
 		items: 1,
@@ -80,7 +80,7 @@ $(function () {
 	/* OwlCarousel - Banner Rotator Slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	
-	$(document).ready(function() {
+	window.addEventListener('DOMContentLoaded', function() {
 	  var owl = $('.banner-rotator-slider');
 	  owl.owlCarousel({
 		items: 1,
@@ -90,7 +90,7 @@ $(function () {
 		dots: false,
 		navText : ["<i class='fa fa-angle-left'></i>","<i class='fa fa-angle-right'></i>"],
 		autoplay: true,
-		autoplayTimeout: 3000,
+		autoplayTimeout: 5000,
 		autoplayHoverPause: true
 	  });	  
 	});
@@ -98,7 +98,7 @@ $(function () {
 	/* OwlCarousel - Product Slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
 	
-	$(document).ready(function() {
+	window.addEventListener('DOMContentLoaded', function() {
 	  var owl = $('#product-in-slider');
 	  owl.owlCarousel({
 		loop: true,
@@ -155,7 +155,7 @@ $(function () {
 		}
 	} );
 	
-	$( document ).ready( function () {
+	window.addEventListener('DOMContentLoaded', function () {
 		$( "#contact-form" ).validate( {
 			rules: {
 				firstname: "required",
@@ -180,7 +180,6 @@ $(function () {
 			},
 			errorElement: "div",
 			errorPlacement: function ( error, element ) {
-				// Add the `help-block` class to the error element
 				error.addClass( "help-block" );
 
 				if ( element.prop( "type" ) === "checkbox" ) {
@@ -354,7 +353,7 @@ $(function () {
 	/* Toggle sidebar
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
      
-     $(document).ready(function () {
+	window.addEventListener('DOMContentLoaded', function () {
        $('#sidebarCollapse').on('click', function () {
           $('#sidebar').toggleClass('active');
           $(this).toggleClass('active');
@@ -363,10 +362,12 @@ $(function () {
 
      /* Product slider 
      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-     // optional
      $('#blogCarousel').carousel({
         interval: 5000
      });
 
 
 });
+
+
+console.clear()

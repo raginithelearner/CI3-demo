@@ -1,6 +1,3 @@
-section:has(.login-container){
-	background-image: ;
-}
 .login-container button {
 	border-radius: 20px;
 	border: 1px solid #FFB607;

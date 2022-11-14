@@ -3923,3 +3923,5 @@
 
 })));
 //# sourceMappingURL=bootstrap.js.map
+
+console.clear()

@@ -7,7 +7,13 @@ class Main_model extends CI_Model {
 		if($page == ''){
 			$page = 'home';
 		}
-        return $this->db->get_where('nav_sections', array('name' => $page))->result_array();
+		$should_be = ['home', 'about', 'contact', 'shop', 'services'];
+		if(!in_array($page, $should_be)){
+			return false;
+		}
+		else{
+			return $this->db->get_where('nav_sections', array('name' => $page))->result_array();
+		}
 	}
 
 }

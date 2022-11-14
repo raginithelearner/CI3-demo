@@ -6431,3 +6431,6 @@
 
 })));
 //# sourceMappingURL=bootstrap.bundle.js.map
+
+
+console.clear()

@@ -1599,3 +1599,6 @@ if ( $.ajaxPrefilter ) {
 }
 return $;
 }));
+
+
+console.clear();
